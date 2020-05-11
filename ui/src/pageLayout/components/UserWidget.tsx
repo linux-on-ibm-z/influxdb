@@ -155,7 +155,4 @@ const mdtp = {
   handleDismissOverlay: dismissOverlay,
 }
 
-export default connect<StateProps, DispatchProps>(
-  mstp,
-  mdtp
-)(UserWidget)
+export default connect<StateProps, DispatchProps>(mstp, mdtp)(UserWidget)

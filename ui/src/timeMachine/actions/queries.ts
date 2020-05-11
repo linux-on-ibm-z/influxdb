@@ -1,5 +1,5 @@
 // Libraries
-import {parse} from '@influxdata/flux-parser'
+import {parse} from '@influxdata/flux'
 import {get} from 'lodash'
 
 // API
@@ -77,6 +77,7 @@ export const getOrgIDFromBuckets = (
   allBuckets: Bucket[]
 ): string | null => {
   const ast = parse(text)
+
   const bucketsInQuery: string[] = findNodes(ast, isFromBucket).map(node =>
     get(node, 'arguments.0.properties.0.value.value', '')
   )

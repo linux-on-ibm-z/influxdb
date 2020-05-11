@@ -75,7 +75,4 @@ const mdtp = {
   onSubmit: saveAndExecuteQueries,
 }
 
-export default connect<StateProps, DispatchProps>(
-  mstp,
-  mdtp
-)(SubmitQueryButton)
+export default connect<StateProps, DispatchProps>(mstp, mdtp)(SubmitQueryButton)

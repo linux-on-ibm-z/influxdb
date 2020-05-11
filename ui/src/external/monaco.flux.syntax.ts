@@ -14,11 +14,11 @@ async function addSyntax(monaco: MonacoType) {
   const registry = new Registry({
     getGrammarDefinition: async () => ({
       format: 'json',
-      content: await import(/* webpackPrefetch: 0 */ 'src/external/flux.tmLanguage.json').then(
-        data => {
-          return JSON.stringify(data)
-        }
-      ),
+      content: await import(
+        /* webpackPrefetch: 0 */ 'src/external/flux.tmLanguage.json'
+      ).then(data => {
+        return JSON.stringify(data)
+      }),
     }),
   })
 

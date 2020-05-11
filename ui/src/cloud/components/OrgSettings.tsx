@@ -28,7 +28,4 @@ const mdtp: DispatchProps = {
   getOrgSettings: getOrgSettingsAction,
 }
 
-export default connect<{}, DispatchProps, {}>(
-  null,
-  mdtp
-)(OrgSettings)
+export default connect<{}, DispatchProps, {}>(null, mdtp)(OrgSettings)

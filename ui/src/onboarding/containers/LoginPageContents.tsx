@@ -265,7 +265,4 @@ const mdtp: DispatchProps = {
   onNotify: notify,
 }
 
-export default connect<{}, DispatchProps>(
-  null,
-  mdtp
-)(LoginPageContents)
+export default connect<{}, DispatchProps>(null, mdtp)(LoginPageContents)

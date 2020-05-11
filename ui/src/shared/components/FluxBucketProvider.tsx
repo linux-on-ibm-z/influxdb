@@ -24,7 +24,4 @@ const mstp = (state: AppState): {} => {
   return {}
 }
 
-export default connect<{}, {}>(
-  mstp,
-  null
-)(FluxBucketProvider)
+export default connect<{}, {}>(mstp, null)(FluxBucketProvider)

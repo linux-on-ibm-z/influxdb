@@ -158,9 +158,7 @@ export const createCheckFromTimeMachine = () => async (
     if (resp.status !== 201) {
       if (resp.data.code.includes('conflict')) {
         throw new Error(
-          `A check named ${
-            check.name
-          } already exists. Please rename the check before saving`
+          `A check named ${check.name} already exists. Please rename the check before saving`
         )
       }
       throw new Error(resp.data.message)

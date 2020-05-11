@@ -166,7 +166,4 @@ const mdtp: DispatchProps = {
   onUpdateThresholds: updateThresholds,
 }
 
-export default connect<{}, DispatchProps, {}>(
-  null,
-  mdtp
-)(CheckPlot)
+export default connect<{}, DispatchProps, {}>(null, mdtp)(CheckPlot)
