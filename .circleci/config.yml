@@ -247,6 +247,8 @@ commands:
               rm ${OSXCROSS_ARCHIVE}
             echo 'export PATH=/usr/local/osxcross/target/bin:${PATH}' >> $BASH_ENV
 
+            sudo apt-get install -y --no-install-recommends gcc-s390x-linux-gnu libc6-dev-s390x-cross
+
             mkdir -p ${GOPATH}/bin
             cp scripts/ci/xcc.sh ${GOPATH}/bin/xcc
             chmod a+x ${GOPATH}/bin/xcc
@@ -256,10 +258,12 @@ commands:
             rustup target add \
               x86_64-unknown-linux-musl \
               aarch64-unknown-linux-musl \
-              x86_64-apple-darwin
+              x86_64-apple-darwin \
+              s390x-unknown-linux-gnu
             echo 'export CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_LINKER=/usr/local/musl/bin/musl-gcc' >> $BASH_ENV
             echo 'export CARGO_TARGET_AARCH64_UNKNOWN_LINUX_MUSL_LINKER=/usr/local/musl-cross/bin/aarch64-unknown-linux-musl-gcc' >> $BASH_ENV
             echo 'export CARGO_TARGET_X86_64_APPLE_DARWIN_LINKER=/usr/local/osxcross/target/bin/x86_64-apple-darwin15-clang' >> $BASH_ENV
+            echo 'export CARGO_TARGET_S390X_UNKNOWN_LINUX_GNU_LINKER=s390x-linux-gnu-gcc' >> $BASH_ENV
       - run:
           name: Install goreleaser
           environment:
